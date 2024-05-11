@@ -1,0 +1,143 @@
+.postGenrate{
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* create post styling */
+.postContainer {
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    color: black;
+}
+
+.uplodeImageContainer {
+    /* background-color: red; */
+    padding: 10px;
+    border-right: .6px solid rgba(255, 255, 255, 0.524);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.uplodeImgInput {
+    display: none;
+}
+
+.uplodePostinfo {
+    padding: 10px;
+}
+.uplimg{
+    border: none;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 7px 12px;
+    color: white;
+    background-color: rgb(7, 125, 236);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.uplimg:hover {
+    background-color: rgb(7, 112, 211);
+}
+
+.uplodePostinfo form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.group{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+.group div{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.uplodePostinfo form label {
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+
+.info {
+    padding: 5px;
+    border: none;
+    font-size: 15px;
+    border-bottom: 0.4px solid black;   
+}
+
+.uploadbtn {
+    border: none;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 7px 12px;
+    color: white;
+    background-color: rgb(7, 125, 236);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.uplodebtn:hover {
+    background-color: rgb(7, 112, 211);
+}
+
+.taglist {
+    background-color: rgba(180, 180, 180, 0.826);
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.taglist ul {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    /* background-color: red; */
+    padding: 4px;
+}
+
+.taglist ul li {
+    font-size: 10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 4px 4px ;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.del{
+    position: absolute;
+    top: 1%;
+    right: -10%;
+    display: none;
+}
+.taglist ul li:hover .del{
+    display: block;
+}
+
