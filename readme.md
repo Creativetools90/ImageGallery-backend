@@ -1,4 +1,4 @@
-<h1 > This is React Gallery App </h1>
+<h1 style="color:red;" > This is React Gallery App </h1>
 
 <h3>this is based on front and back end </h3>
 from end =>  react 
