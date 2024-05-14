@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 <h1> this is react gallery app </h1>
+=======
+<h1 style="color:red;" > This is React Gallery App </h1>
+>>>>>>> fce9cc9a97a014f579f01d1bf0dcb4df1252ad06
 
-this is based on front and back end 
+<h3>this is based on front and back end </h3>
 from end =>  react 
 back end => node , express 
 db user => mongodb , (MONGOOSE)
 
+i am uplode this project only front-end checkout :=>
+<a href="https://github.com/Creativetools90/React-galleryApp-frontEnd" > <b> frontEnd_code </b> </a> <br/>
 in this project we have two unqnic folder structure
 
 === api  => use for backend --------------------------------------------------------
