@@ -1,4 +1,4 @@
-this is react gallery app
+<h1> this is react gallery app </h1>
 
 this is based on front and back end 
 from end =>  react 
