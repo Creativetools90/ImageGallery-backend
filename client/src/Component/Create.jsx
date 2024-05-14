@@ -7,20 +7,9 @@ const Create = () => {
   const [img, setImageUri] = useState();
   const [uplodeImg, setUplodeImg] = useState(false);
   const [tagList, setTagList] = useState([]);
-  const [tagInput, setTagInput] = useState(""); // Changed from 'tags' to 'tagInput'
+  const [tagInput, setTagInput] = useState("");
   const [name, setName] = useState("");
 
-  const HandleImageConvert64 = (e) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = (e) => {
-      setImageUri(e.target.result);
-      setUplodeImg(true);
-    };
-    reader.onerror = (error) => {
-      console.log("error", error);
-    };
-  };
 
   const HandleTabSubmit = (e) => {
     e.preventDefault();
@@ -34,15 +23,18 @@ const Create = () => {
 
   const HandleUplodeSubmit = async (e) => {
     e.preventDefault();
-    const data = { name, tag: tagList }; // Changed from 'tag' to 'tagList'
-    console.log(data);
+    const formData = new FormData();
+    formData.append("img", img);
+    formData.append("user",name);
+    formData.append("tags",tagList);
     try {
       await axios
-        .post("http://localhost:8000/api/create", data)
-        .then(() => {
-          console.log("created"); // Fixed typo
+        .post("http://localhost:8000/api/create", formData)
+        .then((res) => {
+          console.log("created");
+          console.log(res.data);
         })
-        .catch((e) => console.log(e));
+        .catch((e) => console.log("errpr",e));
     } catch (err) {
       console.log("Error: " + err);
     }
@@ -73,9 +65,9 @@ const Create = () => {
                 type="file"
                 id="imguplode"
                 name="img"
-                onChange={HandleImageConvert64}
+                onChange={(e) =>setImageUri(e.target.files[0])}
                 className="uplodeImgInput"
-                accept="image/*"
+                accept="image/png, image/gif, image/jpeg, image/jpg"
               />
             </div>
           </div>
@@ -87,9 +79,11 @@ const Create = () => {
                   type="text"
                   className="info"
                   name="name"
+                  id="name"
                   placeholder="name"
-                  value={name}
                   onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  autoComplete="on"
                 />
               </div>
               <div className="group">
@@ -99,9 +93,11 @@ const Create = () => {
                     type="text"
                     className="info"
                     name="tag"
+                    id="tags"
                     placeholder="tags"
                     value={tagInput}
                     onChange={(e) => setTagInput(e.target.value)} // Changed from 'tags' to 'tagInput'
+                    autoComplete="on"
                   />
                   <button className="uploadbtn" onClick={HandleTabSubmit}>
                     add

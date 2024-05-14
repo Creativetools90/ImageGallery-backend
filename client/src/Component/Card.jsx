@@ -19,6 +19,7 @@ export const Card = () => {
     };
     request();
   }, []);
+  console.log(postApi);
   return (
     <>
       <div className="cardComponent">
@@ -27,7 +28,8 @@ export const Card = () => {
             return (
               <div className="ImageGalCard" key={i}>
                 <div className="imgContainer">
-                  <img src={v.img} alt="imagegallery" />
+                
+                  <img src={`../../public/${v.img}`} alt="imagegallery" />
                 </div>
                 <div className="aboutContainer">
                   <p className="author">photo by{v.name}</p>
